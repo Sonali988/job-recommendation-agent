@@ -81,32 +81,25 @@ class BedrockAIClient:
         return self._client is not None
 
     def _invoke(self, prompt: str, context: dict) -> AIResult:
+        # Uses the Bedrock Converse API, which normalizes request/response across
+        # model families (Amazon Nova, Anthropic Claude, Meta Llama, etc.), so the
+        # same code works regardless of the configured BEDROCK_MODEL_ID.
         if self._client is None:
             return AIResult(ok=False, error="bedrock_unavailable")
-        body = {
-            "anthropic_version": "bedrock-2023-05-31",
-            "max_tokens": self.max_tokens,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": prompt + "\n\nContext:\n" + json.dumps(context, ensure_ascii=False),
-                }
-            ],
-        }
+        user_text = prompt + "\n\nContext:\n" + json.dumps(context, ensure_ascii=False)
+        messages = [{"role": "user", "content": [{"text": user_text}]}]
+        inference_config = {"maxTokens": self.max_tokens, "temperature": 0.2}
+
         last_error = ""
         for attempt in range(2):  # one bounded retry (RP-2)
             try:
-                resp = self._client.invoke_model(
+                resp = self._client.converse(
                     modelId=self.model_id,
-                    body=json.dumps(body),
-                    contentType="application/json",
-                    accept="application/json",
+                    messages=messages,
+                    inferenceConfig=inference_config,
                 )
-                payload = json.loads(resp["body"].read())
-                text = ""
-                for block in payload.get("content", []):
-                    if block.get("type") == "text":
-                        text += block.get("text", "")
+                blocks = resp.get("output", {}).get("message", {}).get("content", [])
+                text = "".join(b.get("text", "") for b in blocks if isinstance(b, dict))
                 return AIResult(raw=text, text=text, ok=True)
             except Exception as exc:  # noqa: BLE001
                 last_error = type(exc).__name__
