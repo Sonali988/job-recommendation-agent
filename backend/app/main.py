@@ -5,6 +5,8 @@ handlers (LC-8), and the API router. Loads seed data at startup.
 """
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,10 +17,17 @@ from app.core.errors import register_error_handlers
 from app.core.logging import CorrelationMiddleware, configure_logging, get_logger, log_event
 
 
+@asynccontextmanager
+async def _lifespan(app: FastAPI):
+    get_repo()  # load + index seed data once
+    log_event(get_logger(), "startup_complete", version=get_settings().version)
+    yield
+
+
 def create_app() -> FastAPI:
     configure_logging()
     settings = get_settings()
-    app = FastAPI(title="YuvaMitra Backend", version=settings.version)
+    app = FastAPI(title="YuvaMitra Backend", version=settings.version, lifespan=_lifespan)
 
     app.add_middleware(
         CORSMiddleware,
@@ -31,12 +40,6 @@ def create_app() -> FastAPI:
 
     register_error_handlers(app)
     app.include_router(router)
-
-    @app.on_event("startup")
-    def _startup() -> None:  # pragma: no cover - trivial
-        get_repo()  # load + index seed data once
-        log_event(get_logger(), "startup_complete", version=settings.version)
-
     return app
 
 

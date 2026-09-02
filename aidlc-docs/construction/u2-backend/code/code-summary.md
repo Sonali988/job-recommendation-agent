@@ -48,10 +48,8 @@ US-1.1, US-2.1, US-3.1 (case/profile/goal); US-4.1/4.2/4.3 (assessment/inventory
 US-5.1/5.2 (roadmap/next-best); US-6.1/6.2 (opportunities + MCP mock); US-7.1/7.2 (chat);
 US-9.1/9.2/9.3 (agent cycle); US-10.1 (server-side creds); US-10.2 (graceful degradation).
 
-## Verification status
-- Code authored per the approved plan; designed to run/test without live AWS
-  (Bedrock mocked; deterministic fallbacks).
-- **`pytest` and `pip install` could NOT be executed in this session** because the
-  environment's terminal integration was not returning command output/exit status
-  (even `echo` failed). Automated verification is therefore PENDING. Run
-  `pip install -r backend/requirements.txt` then `pytest` from `backend/` to verify.
+## Verification status — PASSED
+- Dependencies installed (Python 3.14): pydantic 2.12.5, fastapi 0.124.4, hypothesis 6.167.1, pytest 9.1.1, boto3 1.43.86. (requirements.txt uses version floors because the originally pinned pydantic-core 2.27.2 has no Python 3.14 wheel; generate a lock file for reproducible pins.)
+- App imports and loads real seed data: **10 profiles, 79 opportunities (1 malformed job record tolerated/skipped), 171 courses**.
+- **`pytest`: 17 passed** — API smoke tests (health/profiles/case/gap/opportunities + 404), graceful-degradation tests (Bedrock unavailable -> deterministic fallback, endpoints still 200), PBT invariants INV-1..INV-5, and sanitiser PII/spam tests.
+- Confirmed graceful degradation with no AWS creds: `NoCredentialsError` -> one bounded retry -> fallback -> 200 (US-10.2).

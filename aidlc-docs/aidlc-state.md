@@ -4,7 +4,7 @@
 - **Project Name**: MY Bharat Personal Youth Agent (YuvaMitra)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-09-02T00:00:00Z
-- **Current Stage**: CONSTRUCTION - Code Generation (Unit U2 Backend) - Part 2 Generation
+- **Current Stage**: CONSTRUCTION - Code Generation (Unit U1 Frontend)
 
 ## Workspace State
 - **Existing Code**: No
@@ -41,16 +41,21 @@
 - [x] Units Generation - EXECUTE (approved)
 
 ### 🟢 CONSTRUCTION PHASE
-#### Unit U2 — Backend (built first)
+#### Unit U2 — Backend (built first) — COMPLETE
 - [x] Functional Design - EXECUTE (approved)
 - [x] NFR Requirements - EXECUTE (approved)
 - [x] NFR Design - EXECUTE (approved)
 - [x] Infrastructure Design - SKIP (local demo)
-- [~] Code Generation - EXECUTE (Part 1 Planning in progress)
-- [ ] NFR Requirements - EXECUTE
-- [ ] NFR Design - EXECUTE
-- [ ] Infrastructure Design - SKIP
-- [ ] Code Generation - EXECUTE
+- [x] Code Generation - EXECUTE (approved; 17 tests passing, 1185 opportunities loaded)
+
+#### Unit U1 — Frontend (built second)
+- [x] Functional Design - EXECUTE (approved)
+- [x] NFR Requirements - EXECUTE (approved)
+- [x] NFR Design - EXECUTE (approved)
+- [x] Infrastructure Design - SKIP (local demo)
+- [~] Code Generation - EXECUTE (in progress)
+
+#### After all units
 - [ ] Build and Test - EXECUTE
 
 ### 🟡 OPERATIONS PHASE
@@ -58,7 +63,7 @@
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: CONSTRUCTION — Functional Design (Unit U2 Backend)
+- **Current Stage**: CONSTRUCTION — Functional Design (Unit U1 Frontend)
 - **Next Stage**: NFR Requirements (Unit U2)
 - **Status**: Units approved; real seed data in assets/ captured; producing U2 functional design
 - **Units**: U1 Frontend SPA, U2 Backend (FastAPI incl. MCP mock + seed data + case model); layout = frontend/ + backend/; CONSTRUCTION order = U2 then U1

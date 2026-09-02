@@ -1,8 +1,10 @@
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
-pydantic==2.10.4
-pydantic-settings==2.7.1
-boto3==1.35.90
-httpx==0.28.1
-pytest==8.3.4
-hypothesis==6.123.2
+# Minimum-version floors chosen for broad interpreter compatibility (incl. Python 3.13/3.14).
+# For reproducible builds, generate a lock file (pip freeze > requirements.lock) per SECURITY-10.
+fastapi>=0.115.6
+uvicorn[standard]>=0.34.0
+pydantic>=2.11
+pydantic-settings>=2.7.1
+boto3>=1.35.90
+httpx>=0.28.1
+pytest>=8.3.4
+hypothesis>=6.123.2

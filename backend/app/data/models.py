@@ -8,7 +8,31 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+
+def _to_display_strings(value) -> list[str]:
+    """Normalize a list that may contain strings or dicts into display strings."""
+    if not isinstance(value, list):
+        return []
+    out: list[str] = []
+    for item in value:
+        if isinstance(item, str):
+            if item.strip():
+                out.append(item.strip())
+        elif isinstance(item, dict):
+            # pick the most descriptive fields available
+            parts = [
+                str(item.get(k))
+                for k in ("educationType", "specialization", "city", "district", "state", "name", "pincode")
+                if item.get(k)
+            ]
+            label = ", ".join(dict.fromkeys(parts))  # dedupe, preserve order
+            if label:
+                out.append(label)
+        elif item is not None:
+            out.append(str(item))
+    return out
 
 
 class _Base(BaseModel):
@@ -109,6 +133,8 @@ class Opportunity(_Base):
     minExperience: int = 0
     maxExperience: int = 100
     jobType: str = ""
+    # These may arrive as list[str] OR list[dict] depending on the dataset version,
+    # so accept both and normalize to display strings in a validator.
     jobLocations: list[str] = Field(default_factory=list)
     educationPreferences: list[str] = Field(default_factory=list)
     anyEducationPreference: bool = True
@@ -122,6 +148,11 @@ class Opportunity(_Base):
     # derived
     matchScore: float = 0.0
     matchReasons: list[str] = Field(default_factory=list)
+
+    @field_validator("jobLocations", "educationPreferences", mode="before")
+    @classmethod
+    def _normalize_string_lists(cls, value):
+        return _to_display_strings(value)
 
 
 class Course(_Base):

@@ -278,3 +278,70 @@ MY Bharat Personal Youth Agent is a persistent, case-managed Agentic AI platform
 **Context**: CONSTRUCTION - U2 Code Generation - Part 1 approved, Part 2 generation
 
 ---
+## CONSTRUCTION — U2 Code Generation Complete & Verified / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U2 Backend code generated under backend/ and VERIFIED: dependencies installed (Python 3.14; requirements.txt switched to version floors because pinned pydantic-core 2.27.2 lacks a 3.14 wheel), app loads real seed data (10 profiles / 79 opportunities / 171 courses; 1 malformed job tolerated), pytest = 17 passed (API smoke + 404, graceful degradation with NoCredentialsError -> fallback -> 200, PBT INV-1..5, sanitiser PII/spam). Ready to continue to U1 Frontend (Functional Design)?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U2 Code Generation - Part 2 complete + verified. Note: terminal integration was intermittently unreliable; verification completed via file-redirected output.
+
+---
+## Data Update — Jobs dataset refreshed (Option A)
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "update the users.json from Updated_user_job_sheet.json" -> after clarification (file contained 1185 JOB records, zero user fields) user chose "A"
+**AI Response**: "Flagged that Updated_user_job_sheet.json is job data, not users (would have destroyed the 10 youth profiles). Per user choice A, updated the JOBS data instead: copied it over assets/updated_job_sheet.json and backend/app/data/seed/jobs.json. Newer dataset has educationPreferences/jobLocations as list[dict] (not list[str]); added a field_validator to Opportunity to normalize both fields to display strings. Result: opportunities loaded jumped from 91 -> 1185 (all records). Re-ran pytest = 17 passed. users.json left unchanged (still 10 profiles)."
+**Context**: Data maintenance during CONSTRUCTION (U2 approved code); non-destructive to user profiles
+**Files modified**: assets/updated_job_sheet.json, backend/app/data/seed/jobs.json, backend/app/data/models.py
+
+---
+## CONSTRUCTION — U2 Code Generation Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U2 Backend code approved (17 tests passing, 1185 opportunities loaded). U2 complete. Starting Unit U1 (Frontend) per-unit CONSTRUCTION loop with Functional Design."
+**Context**: CONSTRUCTION - U2 Code Generation approval gate passed; U2 done
+
+---
+## CONSTRUCTION — U1 Functional Design Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: N/A (awaiting answers)
+**AI Response**: "Started U1 Frontend. Created u1-frontend-functional-design-plan.md with 7 questions (routing/nav, data-fetching strategy, when to call AI endpoints, applied/saved state in localStorage, degraded UX, styling approach, mock login). Grounded in U2 OpenAPI contract + UI mockup. Awaiting answers before generating frontend-components.md, business-logic-model.md, business-rules.md."
+**Context**: CONSTRUCTION - U1 Functional Design - questions gate
+
+---
+## CONSTRUCTION — U1 Functional Design Answers (Defaults) & Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "keep defaults and continue" — Q1..Q7 = A (React Router + left-nav; typed ApiClient+hooks+context; on-demand AI + cycle-on-load cached; applied/saved in localStorage + tracker; non-blocking degraded banner; reusable Tailwind components; landing-screen mock login)
+**AI Response**: "Recorded all defaults. Generating U1 functional design artifacts: frontend-components.md, business-logic-model.md, business-rules.md."
+**Context**: CONSTRUCTION - U1 Functional Design - generating artifacts
+
+---
+## CONSTRUCTION — U1 Functional Design Artifacts Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U1 Frontend Functional Design complete. Generated frontend-components.md (component hierarchy App->AppLayout->screens, per-component props/state/API/flow, validation rules, API integration map, a11y/i18n), business-logic-model.md (CaseContext state, localStorage persistence + apply/save, login/load flow, agent-cycle-on-load, AI orchestration, degraded handling), business-rules.md (validation FVR, persistence FPR incl. PBT-02 round-trip, security FSR no-secrets, resiliency FRR, accessibility FAR, i18n FIR, client invariants). Ready to continue to NFR Requirements for U1?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U1 Functional Design - approval gate
+
+---
+## CONSTRUCTION — U1 Functional Design Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U1 Functional Design approved. Proceeding to NFR Requirements (U1)."
+**Context**: CONSTRUCTION - U1 Functional Design approval gate passed
+
+---
+## CONSTRUCTION — U1 NFR Requirements + NFR Design (Defaults) Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U1 NFR Requirements + NFR Design generated with defaults. nfr-requirements.md (perf/resiliency/security applicability [SECURITY-04/05/10/12/13/15 compliant; server/cloud rules N/A]/accessibility WCAG-baseline/i18n/PBT), tech-stack-decisions.md (React18+TS+Vite+Tailwind+react-router+fetch ApiClient+Context+Vitest+fast-check, lock-file pinned, no secrets), nfr-design-patterns.md (error boundaries, timeouts, degraded banner, session cache, safe render), logical-components.md (LC-F1..F8). No blocking findings. Ready to continue to Code Generation for U1?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U1 NFR Requirements + NFR Design - approval gate (combined per user default-driven flow)
+
+---
+## CONSTRUCTION — U1 NFR Approved / Code Generation Started
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U1 NFR Requirements + Design approved. Proceeding to Code Generation for U1 (Frontend). Created plan then generating the React/Vite/TS/Tailwind app under frontend/."
+**Context**: CONSTRUCTION - U1 NFR approval gate passed; U1 Code Generation
+
+---

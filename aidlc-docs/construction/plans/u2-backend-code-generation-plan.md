@@ -61,20 +61,20 @@ backend/
 
 ## Generation Steps (execute in order after approval)
 
-- [ ] **Step 1 — Project structure & config**: create `backend/` tree, `requirements.txt` (pinned: fastapi, uvicorn, boto3, pydantic, pydantic-settings, hypothesis, pytest, httpx), `.env.example`, `core/config.py`.
-- [ ] **Step 2 — Seed data**: copy the three JSON files into `backend/app/data/seed/` (read-only source of truth).
-- [ ] **Step 3 — Domain models** (`data/models.py`): Pydantic models from domain-entities.md (YouthCase + nested, Opportunity, Course, Assessment, SkillGap/PrioritizedGap, Roadmap/RoadmapStep, NextBestAction, Alert, AgentCycleResult, JourneyEvent, SessionState, ChatMessage, AIResult, HealthStatus).
-- [ ] **Step 3b — Model unit tests + PBT round-trip** (`tests/test_roundtrip.py`): INV-1.
-- [ ] **Step 4 — Core cross-cutting**: `logging.py` (LC-1/2), `errors.py` (LC-8), `rate_limit.py` (LC-6), `sanitiser.py` (LC-7).
-- [ ] **Step 4b — Sanitiser tests**: assert PII stripped, spam handles removed.
-- [ ] **Step 5 — Repository** (`data/case_repository.py`, LC-12): load + sanitise + index seed; `get_case`, `list_profiles`, `list_opportunities_raw`, course index.
-- [ ] **Step 6 — Clients**: `ai_client.py` (AIClient protocol + BedrockAIClient with timeout/retry/strict-JSON/guardrails + `AIResult`), `mcp_tools.py` (MCP protocol + MockMCPTools).
-- [ ] **Step 7 — Business services** (deterministic core + Bedrock reasoning + fallbacks): progress, assessment, gap (incl. goal-required skills Q1=C), roadmap (courses mapping Q3=A), opportunity (scoring Q2=A), chat, agent_cycle (Q4=A).
-- [ ] **Step 7b — Service unit tests + PBT**: `test_gap_invariants.py` (INV-2/3), `test_progress_invariants.py` (INV-4), `test_matching.py` (INV-5 + eligibility), `test_degradation.py` (mock Bedrock failure -> fallback, degraded=true).
-- [ ] **Step 8 — API layer**: `api/schemas.py` (LC-9), `api/routes.py` (all endpoints), `main.py` (app, CORS LC-10, middleware, error handlers, DI wiring LC-3/di).
-- [ ] **Step 8b — API tests** (`tests/test_api.py`): TestClient smoke tests for each endpoint incl. `/api/health` and a degraded path.
-- [ ] **Step 9 — Docs**: `backend/README.md` (run instructions, env vars) + `aidlc-docs/construction/u2-backend/code/code-summary.md` (files created, story coverage).
-- [ ] **Step 10 — Verify**: `pip install -r requirements.txt` and run `pytest` (no live AWS needed — Bedrock mocked/fallback); fix failures.
+- [x] **Step 1 — Project structure & config**
+- [x] **Step 2 — Seed data** (users.json, jobs.json, courses.json copied to seed/)
+- [x] **Step 3 — Domain models** (`data/models.py`)
+- [x] **Step 3b — Model unit tests + PBT round-trip** (INV-1) — PASS
+- [x] **Step 4 — Core cross-cutting** (logging, errors, rate_limit, sanitiser)
+- [x] **Step 4b — Sanitiser tests** — PASS
+- [x] **Step 5 — Repository** (`data/case_repository.py`, tolerant loader + indexes)
+- [x] **Step 6 — Clients** (ai_client BedrockAIClient + mcp_tools MockMCPTools)
+- [x] **Step 7 — Business services** (progress, assessment, gap+goal skills, roadmap+courses, opportunity scoring, chat, agent_cycle)
+- [x] **Step 7b — Service unit tests + PBT** (INV-2/3/4/5 + degradation) — PASS
+- [x] **Step 8 — API layer** (schemas, routes, main w/ CORS/middleware/errors/lifespan/DI)
+- [x] **Step 8b — API tests** (TestClient, incl. degraded path) — PASS
+- [x] **Step 9 — Docs** (README + code-summary.md)
+- [x] **Step 10 — Verify**: deps installed, `pytest` = **17 passed** (no live AWS; fallbacks exercised)
 
 ---
 
