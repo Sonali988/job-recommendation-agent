@@ -132,3 +132,98 @@ MY Bharat Personal Youth Agent is a persistent, case-managed Agentic AI platform
 **Context**: INCEPTION - Application Design - Step 12 approval gate
 
 ---
+## Application Design — Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "approve and continue"
+**AI Response**: "Application design approved. Marked Application Design complete in aidlc-state.md. Proceeding to Units Generation stage (final INCEPTION stage)."
+**Context**: INCEPTION - Application Design - Step 12 approval gate passed
+
+---
+## Units Generation — Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: N/A (awaiting answers)
+**AI Response**: "Created unit-of-work-plan.md with a draft 4-unit decomposition (U1 Frontend SPA, U2 Backend core/AI, U3 MCP mock, U4 Seed data/case model) and 6 planning questions (unit granularity, repo layout, shared schema/types, API contract, build order, per-unit CONSTRUCTION sequencing). Awaiting user answers before generating unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md."
+**Context**: INCEPTION - Units Generation - Part 1 questions gate
+
+---
+## Units Generation — Answers Received, Contradiction Detected
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue" — answers in unit-of-work-plan.md: Q1:A (2 units — Frontend + Backend incl. MCP mock + data), Q2:A (two-folder monorepo frontend/ + backend/), Q3:A (independent TS/Python types, seed JSON contract), Q4:A (OpenAPI reference, manual ApiClient typing), Q5:C (parallel, integrate last), Q6:A (complete each unit fully before next, in Q5 build order)
+**AI Response**: "Analyzed answers. Detected contradiction: Q5=C (parallel/no order) conflicts with Q6=A (sequential in Q5's build order). Q1=A collapses decomposition to 2 units (U1 Frontend, U2 Backend incl. MCP+data). Added Follow-up Question 5/6 to unit-of-work-plan.md to resolve CONSTRUCTION sequencing. Awaiting answer before generating unit artifacts."
+**Context**: INCEPTION - Units Generation - Part 1 ambiguity resolution gate
+
+---
+## Units Generation — Contradiction Resolved / Generating Artifacts
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue" — Follow-up Q5/6: A (Sequential, Backend U2 first then Frontend U1; supersedes the parallel Q5=C choice)
+**AI Response**: "Contradiction resolved. Final decomposition: 2 units — U1 Frontend SPA, U2 Backend (FastAPI incl. MCP mock + seed data + case model). Layout: two-folder monorepo (frontend/, backend/). CONSTRUCTION runs sequentially, Backend first. Generating unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md."
+**Context**: INCEPTION - Units Generation - Part 1 resolved, Part 2 generation
+
+---
+## Units Generation — Artifacts Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "Units Generation complete. Generated unit-of-work.md (2 units: U1 Frontend SPA, U2 Backend incl. MCP mock + seed data + case model; two-folder monorepo frontend/ + backend/; CONSTRUCTION order U2 then U1), unit-of-work-dependency.md (inter-unit matrix, single HTTP trust boundary, no build coupling), unit-of-work-story-map.md (all 24 stories E1-E10 assigned; co-owned stories split UI->U1 / logic->U2). Ready to proceed to CONSTRUCTION PHASE (Functional Design for U2 Backend)?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: INCEPTION - Units Generation - Step 16 approval gate (final INCEPTION stage)
+
+---
+## Units Generation — Approved + Real Seed Data Provided
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "i have added profie , jobs and the courses jason in the assets folder\n\ncontinue"
+**AI Response**: "Units generation approved. Inspected assets/: (1) mybharat_youth_agent_10_users_updated.json = { schemaVersion, users:[{userId, profileId, name, email, mobile, gender, dob, location{state,district,pincode,areaType}, youthType, education{course,specialization,status,institution,percentage}, interests[], languages[], skills[{name,level,years}], certifications[], careerPreferences{roles,industries,locations,workMode,employmentTypes,minSalary,maxSalary,willingToRelocate}, jobProfile{status,experienceYears,primarySkills,secondarySkills}}] } -> maps to YouthCase; (2) updated_job_sheet.json = array of {_source:{jobTitle, organizationName, requiredSkills[], min/maxSalary, min/maxAge, education/gender prefs, jobType, jobLocations, jobPostUrl, jobDescription, recruiter PII...}} -> maps to Opportunities; (3) courses.json = flat {id,parent_id,course_name} taxonomy tree -> education/roadmap mapping. Security note: job data contains recruiter PII + spam; backend must not log PII (SECURITY-03) and should sanitize descriptions before Bedrock/UI. Proceeding to CONSTRUCTION - Functional Design for U2 (Backend) informed by these real schemas."
+**Status**: Approved
+**Context**: INCEPTION complete -> CONSTRUCTION begins; real seed data captured
+
+---
+## CONSTRUCTION — Functional Design (U2 Backend) Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "retry" / "continue"
+**AI Response**: "Entered CONSTRUCTION phase. Created u2-backend-functional-design-plan.md grounded in the real assets/ seed data (youth users -> YouthCase, job sheet -> Opportunity, courses -> taxonomy). Presented 7 functional-design questions (goal-required skills derivation, opportunity matching/scoring, course/roadmap mapping, agent-cycle detection rules, Bedrock output format, applied/saved state location, progress metric definition). Flagged recruiter PII/spam in job data for sanitisation + no-logging. Awaiting answers before generating domain-entities.md, business-logic-model.md, business-rules.md."
+**Context**: CONSTRUCTION - U2 Functional Design - questions gate
+
+---
+## CONSTRUCTION — U2 Functional Design Answers Received & Plan Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue" — Q1:C (job-derived skills + Bedrock refine), Q2:A (deterministic scoring + Bedrock explains), Q3:A (gaps->courses, Bedrock orders), Q4:A (all four detection signals), Q5:A (strict JSON + fallback), Q6:A (apply/save in localStorage, backend stateless), Q7:A (weighted-blend progress 0-100)
+**AI Response**: "Analyzed: all consistent, no ambiguities. Generating U2 functional design artifacts: domain-entities.md, business-logic-model.md, business-rules.md."
+**Context**: CONSTRUCTION - U2 Functional Design - answers analyzed, generating artifacts
+
+---
+## CONSTRUCTION — U2 Functional Design Artifacts Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U2 Backend Functional Design complete. Generated domain-entities.md (entities mapped to real seed JSON incl. YouthCase, Opportunity, Course + AI-derived entities), business-logic-model.md (11 algorithm sections: data load/sanitise, assessment, skills inventory, goal-required-skills Q1=C, gap analysis + prioritisation, opportunity matching/scoring Q2=A, roadmap via courses Q3=A, next-best-actions, progress metric Q7=A, agent cycle Q4=A, chat, Bedrock JSON+fallback Q5=A), business-rules.md (validation, eligibility, scoring, PII/sanitisation, error/degradation, CORS, statelessness Q6=A, PBT invariants). Ready to continue to NFR Requirements for U2?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U2 Functional Design - approval gate
+
+---
+## CONSTRUCTION — U2 Functional Design Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U2 Backend functional design approved. Marked complete in aidlc-state.md. Proceeding to NFR Requirements (U2)."
+**Context**: CONSTRUCTION - U2 Functional Design approval gate passed
+
+---
+## CONSTRUCTION — U2 NFR Requirements Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: N/A (awaiting answers)
+**AI Response**: "Created u2-backend-nfr-requirements-plan.md. Noted pre-settled NFRs from requirements.md. Presented 7 questions (Bedrock timeout, non-AI perf target, concurrency, rate limiting, logging destination, Bedrock cost guardrails, confirm demo-N/A security/resiliency items). Awaiting answers before generating nfr-requirements.md + tech-stack-decisions.md."
+**Context**: CONSTRUCTION - U2 NFR Requirements - questions gate
+
+---
+## CONSTRUCTION — U2 NFR Requirements Answers Received & Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue" — Q1:B (20s Bedrock timeout), Q2:A (<200ms non-AI), Q3:A (single demo user), Q4:A (light AI rate limit), Q5:A (structured JSON to stdout), Q6:A (token cap + context trim + light limit, env-configurable), Q7:A (mark cloud-infra security/resiliency rules N/A with documented rationale)
+**AI Response**: "Analyzed: all consistent, no ambiguities. Generating nfr-requirements.md (with SECURITY rule applicability matrix) and tech-stack-decisions.md."
+**Context**: CONSTRUCTION - U2 NFR Requirements - generating artifacts
+
+---
+## CONSTRUCTION — U2 NFR Requirements Artifacts Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U2 NFR Requirements complete. Generated nfr-requirements.md (performance <200ms non-AI / 20s AI timeout, single-user concurrency, resiliency timeouts+degradation+health, full SECURITY-01..15 applicability matrix with N/A rationale for cloud-infra/auth rules, PBT invariants) and tech-stack-decisions.md (FastAPI+Uvicorn+boto3+Pydantic v2+pytest+Hypothesis, structured JSON logging to stdout, light AI rate limit, env contract, pinned deps). No blocking security findings. Ready to continue to NFR Design for U2?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U2 NFR Requirements - approval gate
+
+---

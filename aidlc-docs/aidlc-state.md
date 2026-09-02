@@ -4,7 +4,7 @@
 - **Project Name**: MY Bharat Personal Youth Agent (YuvaMitra)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-09-02T00:00:00Z
-- **Current Stage**: INCEPTION - Application Design Complete (awaiting approval)
+- **Current Stage**: CONSTRUCTION - NFR Requirements (Unit U2 Backend) Complete (awaiting approval)
 
 ## Workspace State
 - **Existing Code**: No
@@ -37,11 +37,13 @@
 - [x] Requirements Analysis
 - [x] User Stories
 - [x] Workflow Planning
-- [x] Application Design - EXECUTE (complete, awaiting approval)
-- [ ] Units Generation - EXECUTE
+- [x] Application Design - EXECUTE (approved)
+- [x] Units Generation - EXECUTE (approved)
 
 ### 🟢 CONSTRUCTION PHASE
-- [ ] Functional Design - EXECUTE
+#### Unit U2 — Backend (built first)
+- [x] Functional Design - EXECUTE (approved)
+- [x] NFR Requirements - EXECUTE (complete, awaiting approval)
 - [ ] NFR Requirements - EXECUTE
 - [ ] NFR Design - EXECUTE
 - [ ] Infrastructure Design - SKIP
@@ -53,6 +55,7 @@
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: Application Design Complete
-- **Next Stage**: Units Generation
-- **Status**: Awaiting user approval of application design
+- **Current Stage**: CONSTRUCTION — Functional Design (Unit U2 Backend)
+- **Next Stage**: NFR Requirements (Unit U2)
+- **Status**: Units approved; real seed data in assets/ captured; producing U2 functional design
+- **Units**: U1 Frontend SPA, U2 Backend (FastAPI incl. MCP mock + seed data + case model); layout = frontend/ + backend/; CONSTRUCTION order = U2 then U1
