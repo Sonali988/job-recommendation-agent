@@ -49,7 +49,7 @@ export interface SessionState {
   lastCycleAt?: string | null;
 }
 
-export interface PersistedState { profileId: string; goalText: string; sessionState: SessionState; }
+export interface PersistedState { profileId: string; goalText: string; session: SessionState; }
 
 export const emptySession = (): SessionState => ({
   completedTaskIds: [], appliedIds: [], savedIds: [], dismissedAlertIds: [],
