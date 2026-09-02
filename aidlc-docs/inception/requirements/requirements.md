@@ -12,13 +12,13 @@
 A pure static browser app cannot safely call Amazon Bedrock (it would require embedding AWS credentials in client code, which the enabled Security baseline forbids). The confirmed architecture is therefore:
 
 ```
-+------------------------+        HTTP (JSON)        +-----------------------------+
-|  React 18 + TS + Vite  | <-----------------------> |  Thin Backend (Node+Express)|
-|  Tailwind CSS (SPA)     |                           |  - loads youth JSON         |
-|  - screens + chat       |                           |  - holds AWS creds (env)    |
-|  - localStorage state   |                           |  - calls Amazon Bedrock     |
-+------------------------+                            |  - MCP tool interface (mock)|
-                                                      +--------------+--------------+
++------------------------+        HTTP (JSON)        +------------------------------+
+|  React 18 + TS + Vite  | <-----------------------> | Thin Backend (Python/FastAPI)|
+|  Tailwind CSS (SPA)     |                           |  - loads youth JSON          |
+|  - screens + chat       |                           |  - holds AWS creds (env)      |
+|  - localStorage state   |                           |  - calls Amazon Bedrock       |
++------------------------+                            |  - MCP tool interface (mock) |
+                                                      +--------------+---------------+
                                                                      |
                                                                      v
                                                             +-----------------+
@@ -28,9 +28,9 @@ A pure static browser app cannot safely call Amazon Bedrock (it would require em
 ```
 
 - Frontend: React 18 + TypeScript + Vite + Tailwind CSS (single-page app).
-- Backend: thin Node + Express proxy that holds AWS credentials via environment variables, loads the youth JSON, calls Amazon Bedrock, and exposes HTTP endpoints.
+- Backend: thin Python (FastAPI + Uvicorn) proxy that holds AWS credentials via environment variables, loads the youth JSON, calls Amazon Bedrock (via boto3), and exposes HTTP endpoints.
 - Data: static seed JSON is the source of truth (read-only on disk); in-session changes persist to browser localStorage (no server-side writes).
-- AI: real Amazon Bedrock (model family and region configurable via env vars, with sensible defaults).
+- AI: real Amazon Bedrock via boto3 (model family and region configurable via env vars, with sensible defaults).
 - MCP: clean tool interface with mocked "MY Bharat" tools; real wiring is future work.
 - Multilingual: English-only content now, with i18n scaffolding for later languages.
 
@@ -89,12 +89,12 @@ A pure static browser app cannot safely call Amazon Bedrock (it would require em
 
 ### NFR-1: Technology Stack
 - Frontend: React 18, TypeScript, Vite, Tailwind CSS.
-- Backend: Node.js + Express (thin proxy).
-- AI: Amazon Bedrock via AWS SDK (server-side).
+- Backend: Python 3.11+ with FastAPI + Uvicorn (thin proxy).
+- AI: Amazon Bedrock via boto3 (server-side).
 - Data: JSON files (seed) + browser localStorage (session state).
 
 ### NFR-2: Runtime & Deployment
-- Local development: `npm run dev` for frontend; a documented command to run the backend.
+- Local development: `npm run dev` for frontend; a documented command to run the backend (e.g., `uvicorn app.main:app --reload`).
 - Production build available via `npm run build` (static host capable); no cloud hosting setup required this iteration.
 - Rollback strategy: revert Git commit (RESILIENCY-04).
 
@@ -120,7 +120,7 @@ A pure static browser app cannot safely call Amazon Bedrock (it would require em
 - Partial PBT enforcement applies rules PBT-02, PBT-03, PBT-07, PBT-08, PBT-09 as blocking; others advisory.
 - Round-trip properties (PBT-02): JSON case (de)serialization and localStorage save/load round-trips.
 - Invariant properties (PBT-03): e.g., gap analysis never returns skills already satisfied; prioritisation preserves the set of items; progress within [0,100].
-- Generator quality (PBT-07), shrinking/reproducibility (PBT-08), framework selection (PBT-09): use fast-check with the chosen JS/TS test runner.
+- Generator quality (PBT-07), shrinking/reproducibility (PBT-08), framework selection (PBT-09): use fast-check with the chosen JS/TS test runner for frontend logic, and Hypothesis with pytest for Python backend logic.
 
 ### NFR-6: Usability & Accessibility
 - Responsive, clean UI using Tailwind.
@@ -138,4 +138,4 @@ A pure static browser app cannot safely call Amazon Bedrock (it would require em
 - Languages beyond English (scaffolding only).
 
 ## Key Requirements Summary
-YuvaMitra is a React 18 + TypeScript + Vite + Tailwind single-page app backed by a thin Node/Express proxy that securely calls Amazon Bedrock (model/region configurable). It loads youth data from seed JSON, persists session changes to localStorage, and delivers seven core screens plus an AI chat. The AI layer performs profile assessment, skills inventory, skill-gap analysis, prioritisation, a learning roadmap, and next-best-action recommendations, driven by a proactive agent cycle (on-load and on-demand). MCP orchestration and multilingual support are scaffolded with mocks/i18n for future expansion. Security is enforced as a blocking baseline; resiliency is applied as directional guidance with demo-appropriate N/A decisions; property-based testing runs in Partial mode with fast-check.
+YuvaMitra is a React 18 + TypeScript + Vite + Tailwind single-page app backed by a thin Python (FastAPI) proxy that securely calls Amazon Bedrock via boto3 (model/region configurable). It loads youth data from seed JSON, persists session changes to localStorage, and delivers seven core screens plus an AI chat. The AI layer performs profile assessment, skills inventory, skill-gap analysis, prioritisation, a learning roadmap, and next-best-action recommendations, driven by a proactive agent cycle (on-load and on-demand). MCP orchestration and multilingual support are scaffolded with mocks/i18n for future expansion. Security is enforced as a blocking baseline; resiliency is applied as directional guidance with demo-appropriate N/A decisions; property-based testing runs in Partial mode with fast-check.
