@@ -353,3 +353,12 @@ MY Bharat Personal Youth Agent is a persistent, case-managed Agentic AI platform
 **Context**: CONSTRUCTION - U1 Code Generation - Part 2 complete + verified
 
 ---
+## Bedrock Credentials Configured & Verified (live)
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "i have paseted the credss in the .env" (backend/.env)
+**AI Response**: "Confirmed backend/.env is gitignored (git check-ignore). Fixed a real gap: backend now loads backend/.env into os.environ at startup (python-dotenv in config.py) and uses absolute .env path, so boto3 finds AWS creds. First live call failed with ValidationException because the model was set to amazon.nova-micro-v1:0 but BedrockAIClient used Claude-format invoke_model; switched BedrockAIClient to the Bedrock Converse API (model-agnostic). Live verification: credentials found, converse call returned 'OK' (call_ok True). Re-ran backend pytest = 17 passed. Updated .env.example default to Nova. SECURITY NOTE: the AWS access key was exposed in-session; advised user to rotate it after testing. Never stored key values in docs."
+**Status**: Verified
+**Context**: Post-U1 code-gen; Bedrock connectivity confirmed end-to-end
+**Files modified**: backend/app/clients/ai_client.py (Converse API), backend/app/core/config.py (dotenv->environ + absolute path), backend/.env.example (Nova default)
+
+---
