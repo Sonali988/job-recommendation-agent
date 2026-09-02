@@ -102,3 +102,25 @@ MY Bharat Personal Youth Agent is a persistent, case-managed Agentic AI platform
 **Context**: Workflow plan created with 7 stages to execute, 1 skipped (Infrastructure Design), greenfield (Reverse Engineering N/A). Mermaid diagram validated with text alternative included.
 
 ---
+## Workflow Planning — Approved (with UI mockup reference)
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "this is the recommended design" (attached a UI mockup image: "SkillMatch AI" dashboard — left nav [Dashboard, Job Matches, Applied Jobs, Saved Jobs, Resume Builder, Skill Assessment, Courses, Career Advice, Interview Prep, Companies, Settings], greeting header + search, profile-strength ring [72%], stat tiles [Matches Found 48 / Applied 12 / Interviews 3], top job-match cards with match-score rings [95/90/86%], Recommended Skills to Improve with demand tags, Application Tracker with statuses, Get Personalized Career Guidance CTA, Job Alerts, Top Companies Hiring row)
+**AI Response**: "Execution plan approved. Captured attached UI mockup as the frontend design reference for Application Design (dashboard layout, navigation IA, job-match cards, profile strength, application tracker, skills-to-improve, alerts, companies). Marked Workflow Planning complete. Proceeding to Application Design stage."
+**Status**: Approved
+**Context**: INCEPTION - Workflow Planning approval gate passed; UI reference recorded
+
+---
+## Application Design — Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: N/A (awaiting answers)
+**AI Response**: "Analyzed requirements + stories + UI mockup. Created application-design-plan.md with 9 design questions (frontend component organization, state management, API shape, backend structure, AI abstraction placement, agent cycle placement, MCP interface placement, mockup terminology reconciliation, swappability pattern). Awaiting user answers before generating design artifacts."
+**Context**: INCEPTION - Application Design - questions gate
+
+---
+## Application Design — Answers Received & Plan Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "completed" — Q1:A (feature-based frontend), Q2:A (Context+hooks+localStorage), Q3:A (REST per capability), Q4:A (layered FastAPI), Q5:A (backend owns AI), Q6:A (backend agent service, on-load + on-demand), Q7:A (backend MCP mock interface), Q8:A (keep YuvaMitra domain terms; mockup as visual inspiration), Q9:A (DI interfaces chosen by config)
+**AI Response**: "Analyzed answers: all A, clear and consistent, no ambiguities. Note: Q6=A moves the agent cycle server-side (supersedes verification Q7=A client-side sim) — recorded as an intentional refinement. Generating design artifacts: components.md, component-methods.md, services.md, component-dependency.md, application-design.md."
+**Context**: INCEPTION - Application Design - answers analyzed, generating artifacts
+
+---
