@@ -111,25 +111,25 @@ D) Other (please describe after [Answer]: tag below)
 ## Execution Checklist (executed after the plan is approved)
 
 ### Part 1 — Planning
-- [ ] Assume Product Owner role
-- [ ] Assess user-stories need (done: `user-stories-assessment.md`)
-- [ ] Generate context-appropriate planning questions (this file)
-- [ ] Collect answers to all `[Answer]:` tags
-- [ ] Analyze answers for ambiguity; raise follow-up clarifications if needed
-- [ ] Obtain explicit approval of this plan
+- [x] Assume Product Owner role
+- [x] Assess user-stories need (done: `user-stories-assessment.md`)
+- [x] Generate context-appropriate planning questions (this file)
+- [x] Collect answers to all `[Answer]:` tags
+- [x] Analyze answers for ambiguity; raise follow-up clarifications if needed (none needed)
+- [x] Obtain explicit approval of this plan
 
 ### Part 2 — Generation (methodology)
-- [ ] Derive personas from approved persona decision (Q2) → `personas.md`
-- [ ] Map requirements FR-1..FR-8 to epics/story groups using approved breakdown (Q1)
-- [ ] Write user stories using approved granularity (Q4) and INVEST criteria
-- [ ] Write acceptance criteria in approved format (Q3)
-- [ ] Add AI/agent behavior stories per approved approach (Q5)
-- [ ] Add NFR/enabler stories per approved coverage (Q6)
-- [ ] Add priority/sizing hints per approved decision (Q7)
-- [ ] Map personas to their relevant stories
-- [ ] Verify all stories are Independent, Negotiable, Valuable, Estimable, Small, Testable
-- [ ] Produce `stories.md` and `personas.md` in `aidlc-docs/inception/user-stories/`
-- [ ] Update `aidlc-state.md` and present completion for approval
+- [x] Derive personas from approved persona decision (Q2) → `personas.md`
+- [x] Map requirements FR-1..FR-8 to epics/story groups using approved breakdown (Q1)
+- [x] Write user stories using approved granularity (Q4) and INVEST criteria
+- [x] Write acceptance criteria in approved format (Q3)
+- [x] Add AI/agent behavior stories per approved approach (Q5)
+- [x] Add NFR/enabler stories per approved coverage (Q6)
+- [x] Add priority/sizing hints per approved decision (Q7 = C: none)
+- [x] Map personas to their relevant stories
+- [x] Verify all stories are Independent, Negotiable, Valuable, Estimable, Small, Testable
+- [x] Produce `stories.md` and `personas.md` in `aidlc-docs/inception/user-stories/`
+- [x] Update `aidlc-state.md` and present completion for approval
 
 ---
 
