@@ -4,7 +4,7 @@
 - **Project Name**: MY Bharat Personal Youth Agent (YuvaMitra)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-09-02T00:00:00Z
-- **Current Stage**: CONSTRUCTION - NFR Requirements (Unit U2 Backend) Complete (awaiting approval)
+- **Current Stage**: CONSTRUCTION - Code Generation (Unit U2 Backend) - Part 2 Generation
 
 ## Workspace State
 - **Existing Code**: No
@@ -43,7 +43,10 @@
 ### 🟢 CONSTRUCTION PHASE
 #### Unit U2 — Backend (built first)
 - [x] Functional Design - EXECUTE (approved)
-- [x] NFR Requirements - EXECUTE (complete, awaiting approval)
+- [x] NFR Requirements - EXECUTE (approved)
+- [x] NFR Design - EXECUTE (approved)
+- [x] Infrastructure Design - SKIP (local demo)
+- [~] Code Generation - EXECUTE (Part 1 Planning in progress)
 - [ ] NFR Requirements - EXECUTE
 - [ ] NFR Design - EXECUTE
 - [ ] Infrastructure Design - SKIP

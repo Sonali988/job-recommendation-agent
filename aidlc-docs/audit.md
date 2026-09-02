@@ -227,3 +227,54 @@ MY Bharat Personal Youth Agent is a persistent, case-managed Agentic AI platform
 **Context**: CONSTRUCTION - U2 NFR Requirements - approval gate
 
 ---
+## CONSTRUCTION — U2 NFR Requirements Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U2 NFR Requirements approved. Marked complete in aidlc-state.md. Proceeding to NFR Design (U2)."
+**Context**: CONSTRUCTION - U2 NFR Requirements approval gate passed
+
+---
+## CONSTRUCTION — U2 NFR Design Plan Created / Questions Presented
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: N/A (awaiting answers)
+**AI Response**: "Created u2-backend-nfr-design-plan.md with 7 questions (failure-isolation pattern, Bedrock retry policy, health-check depth, caching, request correlation/observability, RESILIENCY-14 resiliency testing approach [required user decision], sanitiser component placement). Noted resiliency user-decisions already captured in Requirements. Awaiting answers before generating nfr-design-patterns.md + logical-components.md."
+**Context**: CONSTRUCTION - U2 NFR Design - questions gate (incl. RESILIENCY-14 user decision)
+
+---
+## CONSTRUCTION — U2 NFR Design Answers (Recommended) & Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "take recommended and continue" — recorded Q1:A (timeout+fallback, no breaker), Q2:A (one bounded retry), Q3:A (shallow health), Q4:A (startup indexing cache only), Q5:A (correlation id + timing logs), Q6:A (RESILIENCY-14: lightweight degradation tests in Build and Test), Q7:A (dedicated core/sanitiser module)
+**AI Response**: "Recorded all recommended answers in u2-backend-nfr-design-plan.md. RESILIENCY-14 user decision = propose lightweight resiliency tests executed in Build and Test. Generating nfr-design-patterns.md + logical-components.md."
+**Context**: CONSTRUCTION - U2 NFR Design - generating artifacts
+
+---
+## CONSTRUCTION — U2 NFR Design Artifacts Generated / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U2 NFR Design complete. Generated nfr-design-patterns.md (resilience: timeout+bounded-retry+fallback+degradation, shallow cached health, no breaker documented; performance: startup indexing, context trim; security: validation, sanitiser, CORS, fail-closed, rate limit, safe JSON; observability: correlation id + timing logs; testing: PBT + resiliency degradation tests; full RESILIENCY/SECURITY mapping) and logical-components.md (LC-1..LC-12: CorrelationMiddleware, StructuredLogger, Settings, AIClient wrapper, FallbackProvider, RateLimiter, Sanitiser, GlobalErrorHandler, InputValidation, CORSPolicy, HealthProvider, CaseIndex + integration diagram). No blocking findings. Next: Infrastructure Design is SKIP, so proceed to Code Generation for U2?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U2 NFR Design - approval gate
+
+---
+## CONSTRUCTION — U2 NFR Design Approved
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "continue"
+**AI Response**: "U2 NFR Design approved. Infrastructure Design is SKIP (local demo). Proceeding to Code Generation for U2 (Part 1: Planning)."
+**Context**: CONSTRUCTION - U2 NFR Design approval gate passed
+
+---
+## CONSTRUCTION — U2 Code Generation Plan (Part 1) Created / Approval Requested
+**Timestamp**: 2026-09-02T00:00:00Z
+**AI Prompt**: "U2 Code Generation Plan created at aidlc-docs/construction/plans/u2-backend-code-generation-plan.md. App code target: backend/ at workspace root. 10 numbered steps (structure/config, seed data, domain models + PBT round-trip, core cross-cutting + sanitiser tests, repository/index, clients [Bedrock + MCP mock], business services + PBT/degradation tests, API layer + tests, docs, verify with pytest). Story->step traceability included. Backend designed to build/test without live AWS (Bedrock mocked/fallback). Approve this plan to begin code generation?"
+**User Response**: N/A (awaiting approval)
+**Status**: Awaiting Approval
+**Context**: CONSTRUCTION - U2 Code Generation - Part 1 Planning approval gate
+
+---
+## CONSTRUCTION — U2 Code Generation Plan Approved / Part 2 Generation
+**Timestamp**: 2026-09-02T00:00:00Z
+**User Input**: "fast up and keep the default decisions"
+**AI Response**: "Code generation plan approved with default/recommended decisions. Executing Part 2: generating backend/ code (structure, config, seed data, domain models, core cross-cutting, repository, clients, services, API, tests, docs) then verifying with pytest without live AWS."
+**Context**: CONSTRUCTION - U2 Code Generation - Part 1 approved, Part 2 generation
+
+---
