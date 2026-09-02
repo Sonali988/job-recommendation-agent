@@ -10,6 +10,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.adapter_routes import router as adapter_router
 from app.api.routes import router
 from app.core.config import get_settings
 from app.core.di import get_repo
@@ -39,6 +40,9 @@ def create_app() -> FastAPI:
     app.add_middleware(CorrelationMiddleware)
 
     register_error_handlers(app)
+    # Adapter routes first so their shapes take precedence for shared paths
+    # (/api/chat, /api/assessment, /api/gap-analysis) that the frontend calls.
+    app.include_router(adapter_router)
     app.include_router(router)
     return app
 

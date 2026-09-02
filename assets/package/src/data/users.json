@@ -1,0 +1,983 @@
+{
+  "schemaVersion": "1.0",
+  "datasetName": "MY Bharat Youth Agent Test Users",
+  "description": "Fictional development/test dataset containing 10 youth profiles. No real personal information is used.",
+  "users": [
+    {
+      "userId": "USR-00001",
+      "profileId": "MBY-2026-0001",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma01@example.com",
+      "mobile": "9000000001",
+      "gender": "Male",
+      "dob": "2001-04-18",
+      "location": {
+        "state": "Delhi",
+        "district": "New Delhi",
+        "pincode": "110001",
+        "areaType": "Urban"
+      },
+      "youthType": "STUDENT",
+      "education": {
+        "course": "B.Tech",
+        "specialization": "Computer Science",
+        "status": "PURSUING",
+        "institution": "Delhi Institute of Technology",
+        "percentage": 78.5
+      },
+      "interests": [
+        "Information Technology",
+        "Software Development"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "React",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "TypeScript",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Node.js",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Git",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "HTML",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "CSS",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "REST APIs",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "AWS",
+          "level": "INTERMEDIATE",
+          "years": 1
+        }
+      ],
+      "certifications": [
+        "JavaScript Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Frontend Developer",
+          "Software Developer"
+        ],
+        "industries": [
+          "Information Technology",
+          "Digital Services",
+          "Software Development"
+        ],
+        "locations": [
+          "New Delhi",
+          "Gurugram",
+          "Bengaluru"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME",
+          "INTERNSHIP"
+        ],
+        "minSalary": 400000,
+        "maxSalary": 900000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 0,
+        "primarySkills": [
+          "JavaScript",
+          "React",
+          "TypeScript"
+        ],
+        "secondarySkills": [
+          "Node.js",
+          "Git",
+          "HTML",
+          "CSS",
+          "REST APIs",
+          "AWS"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00002",
+      "profileId": "MBY-2026-0002",
+      "name": "Ananya Verma",
+      "email": "ananya.verma02@example.com",
+      "mobile": "9000000002",
+      "gender": "Female",
+      "dob": "2000-11-09",
+      "location": {
+        "state": "Maharashtra",
+        "district": "Pune",
+        "pincode": "411001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "B.Sc",
+        "specialization": "Statistics",
+        "status": "COMPLETED",
+        "institution": "Pune University",
+        "percentage": 82.4
+      },
+      "interests": [
+        "Data Science",
+        "Data Analytics"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "skills": [
+        {
+          "name": "Python",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "SQL",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Excel",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Power BI",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Pandas",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Machine Learning",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Tableau",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Statistics",
+          "level": "ADVANCED",
+          "years": 2
+        }
+      ],
+      "certifications": [
+        "Data Analytics Foundations"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Data Analyst",
+          "Junior Data Scientist"
+        ],
+        "industries": [
+          "Information Technology",
+          "Finance"
+        ],
+        "locations": [
+          "Pune",
+          "Mumbai",
+          "Bengaluru"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME"
+        ],
+        "minSalary": 450000,
+        "maxSalary": 1000000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 1,
+        "primarySkills": [
+          "Python",
+          "SQL",
+          "Excel"
+        ],
+        "secondarySkills": [
+          "Power BI",
+          "Pandas",
+          "Machine Learning",
+          "Tableau",
+          "Statistics"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00003",
+      "profileId": "MBY-2026-0003",
+      "name": "Rohan Yadav",
+      "email": "rohan.yadav03@example.com",
+      "mobile": "9000000003",
+      "gender": "Male",
+      "dob": "1999-06-21",
+      "location": {
+        "state": "Uttar Pradesh",
+        "district": "Lucknow",
+        "pincode": "226001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "B.Com",
+        "specialization": "Commerce",
+        "status": "COMPLETED",
+        "institution": "Lucknow University",
+        "percentage": 74.2
+      },
+      "interests": [
+        "Business",
+        "Operations and Logistics"
+      ],
+      "languages": [
+        "Hindi",
+        "English"
+      ],
+      "skills": [
+        {
+          "name": "Logistics",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Inventory Management",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Excel",
+          "level": "ADVANCED",
+          "years": 4
+        },
+        {
+          "name": "Operations",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "ERP",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "Supply Chain Analytics",
+          "level": "INTERMEDIATE",
+          "years": 1
+        }
+      ],
+      "certifications": [
+        "Supply Chain Basics"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Operations Executive",
+          "Supply Chain Executive"
+        ],
+        "industries": [
+          "Logistics",
+          "Manufacturing",
+          "Services"
+        ],
+        "locations": [
+          "Lucknow",
+          "Noida",
+          "Delhi"
+        ],
+        "workMode": "ONSITE",
+        "employmentTypes": [
+          "FULL_TIME"
+        ],
+        "minSalary": 350000,
+        "maxSalary": 700000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 3,
+        "primarySkills": [
+          "Logistics",
+          "Inventory Management",
+          "Excel"
+        ],
+        "secondarySkills": [
+          "Operations",
+          "ERP",
+          "Supply Chain Analytics"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00004",
+      "profileId": "MBY-2026-0004",
+      "name": "Priya Nair",
+      "email": "priya.nair04@example.com",
+      "mobile": "9000000004",
+      "gender": "Female",
+      "dob": "2002-02-14",
+      "location": {
+        "state": "Kerala",
+        "district": "Ernakulam",
+        "pincode": "682011",
+        "areaType": "Urban"
+      },
+      "youthType": "STUDENT",
+      "education": {
+        "course": "M.A.",
+        "specialization": "Psychology",
+        "status": "PURSUING",
+        "institution": "Kerala State University",
+        "percentage": 76
+      },
+      "interests": [
+        "Social Development",
+        "Youth Development"
+      ],
+      "languages": [
+        "English",
+        "Malayalam",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Communication",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Community Outreach",
+          "level": "BASIC",
+          "years": 0
+        }
+      ],
+      "certifications": [
+        "Community Leadership"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Program Coordinator",
+          "Youth Programme Associate"
+        ],
+        "industries": [
+          "Social Development",
+          "Education",
+          "Services"
+        ],
+        "locations": [
+          "Kochi",
+          "Thiruvananthapuram",
+          "Bengaluru"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME",
+          "INTERNSHIP"
+        ],
+        "minSalary": 300000,
+        "maxSalary": 650000,
+        "willingToRelocate": false
+      },
+      "jobProfile": {
+        "status": "EXPLORING",
+        "experienceYears": 0,
+        "primarySkills": [
+          "Communication"
+        ],
+        "secondarySkills": [
+          "Community Outreach"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00005",
+      "profileId": "MBY-2026-0005",
+      "name": "Vikram Patel",
+      "email": "vikram.patel05@example.com",
+      "mobile": "9000000005",
+      "gender": "Male",
+      "dob": "2000-08-30",
+      "location": {
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "pincode": "380001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "B.E.",
+        "specialization": "Mechanical Engineering",
+        "status": "COMPLETED",
+        "institution": "Gujarat Institute of Engineering",
+        "percentage": 79.1
+      },
+      "interests": [
+        "Engineering",
+        "Manufacturing"
+      ],
+      "languages": [
+        "English",
+        "Gujarati",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "AutoCAD",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "SolidWorks",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "Quality Control",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "Lean Manufacturing",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Six Sigma",
+          "level": "BASIC",
+          "years": 0
+        }
+      ],
+      "certifications": [
+        "Lean Manufacturing Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Production Engineer",
+          "Manufacturing Engineer"
+        ],
+        "industries": [
+          "Manufacturing",
+          "Automotive"
+        ],
+        "locations": [
+          "Ahmedabad",
+          "Vadodara",
+          "Pune"
+        ],
+        "workMode": "ONSITE",
+        "employmentTypes": [
+          "FULL_TIME"
+        ],
+        "minSalary": 400000,
+        "maxSalary": 800000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 2,
+        "primarySkills": [
+          "AutoCAD",
+          "SolidWorks",
+          "Quality Control"
+        ],
+        "secondarySkills": [
+          "Lean Manufacturing",
+          "Six Sigma"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00006",
+      "profileId": "MBY-2026-0006",
+      "name": "Sneha Reddy",
+      "email": "sneha.reddy06@example.com",
+      "mobile": "9000000006",
+      "gender": "Female",
+      "dob": "2001-12-05",
+      "location": {
+        "state": "Telangana",
+        "district": "Hyderabad",
+        "pincode": "500001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "B.Tech",
+        "specialization": "Information Technology",
+        "status": "COMPLETED",
+        "institution": "Hyderabad Technical University",
+        "percentage": 81.3
+      },
+      "interests": [
+        "Information Technology",
+        "Cybersecurity"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Networking",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Linux",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "SIEM",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Cybersecurity",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Python",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Cloud Security",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Incident Response",
+          "level": "INTERMEDIATE",
+          "years": 1
+        }
+      ],
+      "certifications": [
+        "Security Operations Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "SOC Analyst",
+          "Cybersecurity Analyst"
+        ],
+        "industries": [
+          "Information Technology",
+          "Cybersecurity"
+        ],
+        "locations": [
+          "Hyderabad",
+          "Bengaluru",
+          "Pune"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME",
+          "INTERNSHIP"
+        ],
+        "minSalary": 400000,
+        "maxSalary": 850000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 1,
+        "primarySkills": [
+          "Networking",
+          "Linux",
+          "SIEM"
+        ],
+        "secondarySkills": [
+          "Cybersecurity",
+          "Python",
+          "Cloud Security",
+          "Incident Response"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00007",
+      "profileId": "MBY-2026-0007",
+      "name": "Aditya Gupta",
+      "email": "aditya.gupta07@example.com",
+      "mobile": "9000000007",
+      "gender": "Male",
+      "dob": "2000-03-27",
+      "location": {
+        "state": "West Bengal",
+        "district": "Kolkata",
+        "pincode": "700001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "MBA",
+        "specialization": "Human Resources",
+        "status": "COMPLETED",
+        "institution": "Kolkata Business School",
+        "percentage": 80
+      },
+      "interests": [
+        "Human Resources",
+        "Recruitment"
+      ],
+      "languages": [
+        "English",
+        "Bengali",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Recruitment",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Excel",
+          "level": "BASIC",
+          "years": 0
+        }
+      ],
+      "certifications": [
+        "Talent Acquisition Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "HR Executive",
+          "Recruitment Executive"
+        ],
+        "industries": [
+          "Services",
+          "Information Technology"
+        ],
+        "locations": [
+          "Kolkata",
+          "Bengaluru",
+          "Delhi"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME"
+        ],
+        "minSalary": 400000,
+        "maxSalary": 750000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 2,
+        "primarySkills": [
+          "Recruitment"
+        ],
+        "secondarySkills": [
+          "Excel"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00008",
+      "profileId": "MBY-2026-0008",
+      "name": "Meera Iyer",
+      "email": "meera.iyer08@example.com",
+      "mobile": "9000000008",
+      "gender": "Female",
+      "dob": "2001-09-11",
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "pincode": "600001",
+        "areaType": "Urban"
+      },
+      "youthType": "STUDENT",
+      "education": {
+        "course": "M.Ed",
+        "specialization": "Education",
+        "status": "COMPLETED",
+        "institution": "Chennai Education University",
+        "percentage": 84
+      },
+      "interests": [
+        "Education",
+        "Teaching and Learning"
+      ],
+      "languages": [
+        "English",
+        "Tamil",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Teaching",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Google Workspace",
+          "level": "BASIC",
+          "years": 0
+        }
+      ],
+      "certifications": [
+        "Digital Teaching Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Teacher",
+          "Learning Coordinator"
+        ],
+        "industries": [
+          "Education",
+          "EdTech"
+        ],
+        "locations": [
+          "Chennai",
+          "Bengaluru",
+          "Hyderabad"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME",
+          "INTERNSHIP"
+        ],
+        "minSalary": 350000,
+        "maxSalary": 700000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 2,
+        "primarySkills": [
+          "Teaching"
+        ],
+        "secondarySkills": [
+          "Google Workspace"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00009",
+      "profileId": "MBY-2026-0009",
+      "name": "Karan Mehta",
+      "email": "karan.mehta09@example.com",
+      "mobile": "9000000009",
+      "gender": "Male",
+      "dob": "2002-05-16",
+      "location": {
+        "state": "Rajasthan",
+        "district": "Jaipur",
+        "pincode": "302001",
+        "areaType": "Urban"
+      },
+      "youthType": "STUDENT",
+      "education": {
+        "course": "B.Com",
+        "specialization": "Finance",
+        "status": "PURSUING",
+        "institution": "Jaipur Commerce College",
+        "percentage": 72.5
+      },
+      "interests": [
+        "Business",
+        "Finance and Entrepreneurship"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Excel",
+          "level": "INTERMEDIATE",
+          "years": 1
+        },
+        {
+          "name": "Communication",
+          "level": "BASIC",
+          "years": 0
+        }
+      ],
+      "certifications": [
+        "Financial Literacy and Analysis"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Financial Analyst",
+          "Business Analyst"
+        ],
+        "industries": [
+          "Finance",
+          "FinTech",
+          "Services"
+        ],
+        "locations": [
+          "Jaipur",
+          "Delhi",
+          "Gurugram"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME",
+          "INTERNSHIP"
+        ],
+        "minSalary": 350000,
+        "maxSalary": 750000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "EXPLORING",
+        "experienceYears": 0,
+        "primarySkills": [
+          "Excel"
+        ],
+        "secondarySkills": [
+          "Communication"
+        ]
+      }
+    },
+    {
+      "userId": "USR-00010",
+      "profileId": "MBY-2026-0010",
+      "name": "Ishita Das",
+      "email": "ishita.das10@example.com",
+      "mobile": "9000000010",
+      "gender": "Female",
+      "dob": "1999-10-22",
+      "location": {
+        "state": "Jharkhand",
+        "district": "Ranchi",
+        "pincode": "834001",
+        "areaType": "Urban"
+      },
+      "youthType": "JOB_SEEKER",
+      "education": {
+        "course": "B.A.",
+        "specialization": "Sociology",
+        "status": "COMPLETED",
+        "institution": "Ranchi University",
+        "percentage": 75.8
+      },
+      "interests": [
+        "Social Development",
+        "Project Coordination"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "skills": [
+        {
+          "name": "Project Coordination",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Community Outreach",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Communication",
+          "level": "ADVANCED",
+          "years": 4
+        },
+        {
+          "name": "MS Office",
+          "level": "ADVANCED",
+          "years": 3
+        },
+        {
+          "name": "Reporting",
+          "level": "ADVANCED",
+          "years": 2
+        },
+        {
+          "name": "Stakeholder Management",
+          "level": "INTERMEDIATE",
+          "years": 2
+        },
+        {
+          "name": "Team Leadership",
+          "level": "INTERMEDIATE",
+          "years": 2
+        }
+      ],
+      "certifications": [
+        "Project Coordination Fundamentals"
+      ],
+      "careerPreferences": {
+        "roles": [
+          "Program Coordinator",
+          "Project Coordinator"
+        ],
+        "industries": [
+          "Social Development",
+          "Services",
+          "Education"
+        ],
+        "locations": [
+          "Ranchi",
+          "Delhi",
+          "Kolkata"
+        ],
+        "workMode": "HYBRID",
+        "employmentTypes": [
+          "FULL_TIME"
+        ],
+        "minSalary": 350000,
+        "maxSalary": 700000,
+        "willingToRelocate": true
+      },
+      "jobProfile": {
+        "status": "ACTIVELY_LOOKING",
+        "experienceYears": 3,
+        "primarySkills": [
+          "Project Coordination",
+          "Communication",
+          "Community Outreach"
+        ],
+        "secondarySkills": [
+          "MS Office",
+          "Reporting",
+          "Stakeholder Management",
+          "Team Leadership"
+        ]
+      }
+    }
+  ]
+}

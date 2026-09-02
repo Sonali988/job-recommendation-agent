@@ -1,0 +1,226 @@
+{
+  "id": "youth-001",
+  "profile": {
+    "firstName": "Rahul",
+    "lastName": "Sharma",
+    "age": 24,
+    "gender": "male",
+    "location": {
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "country": "India"
+    },
+    "email": "rahul.sharma@example.com",
+    "phone": "+91-9876543210",
+    "preferredLanguage": "en",
+    "profileStrength": 72,
+    "experienceYears": 2.5,
+    "resumeUploaded": true,
+    "jobPreferencesUpdated": true,
+    "avatar": null
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "B.Tech",
+      "field": "Computer Science & Engineering",
+      "institution": "RV College of Engineering",
+      "year": 2022,
+      "grade": "8.2 CGPA"
+    }
+  ],
+  "skills": [
+    { "id": "sk-1", "name": "JavaScript", "level": "advanced", "category": "programming", "verified": true },
+    { "id": "sk-2", "name": "React", "level": "advanced", "category": "frontend", "verified": true },
+    { "id": "sk-3", "name": "TypeScript", "level": "intermediate", "category": "programming", "verified": true },
+    { "id": "sk-4", "name": "Node.js", "level": "intermediate", "category": "backend", "verified": true },
+    { "id": "sk-5", "name": "Python", "level": "intermediate", "category": "programming", "verified": false },
+    { "id": "sk-6", "name": "SQL", "level": "intermediate", "category": "database", "verified": true },
+    { "id": "sk-7", "name": "Git", "level": "advanced", "category": "tools", "verified": true },
+    { "id": "sk-8", "name": "REST APIs", "level": "advanced", "category": "backend", "verified": true },
+    { "id": "sk-9", "name": "HTML/CSS", "level": "advanced", "category": "frontend", "verified": true },
+    { "id": "sk-10", "name": "MongoDB", "level": "beginner", "category": "database", "verified": false },
+    { "id": "sk-11", "name": "Java", "level": "intermediate", "category": "programming", "verified": true },
+    { "id": "sk-12", "name": "Agile/Scrum", "level": "intermediate", "category": "soft-skills", "verified": false },
+    { "id": "sk-13", "name": "Problem Solving", "level": "advanced", "category": "soft-skills", "verified": true },
+    { "id": "sk-14", "name": "Communication", "level": "intermediate", "category": "soft-skills", "verified": false },
+    { "id": "sk-15", "name": "Data Structures", "level": "intermediate", "category": "fundamentals", "verified": true },
+    { "id": "sk-16", "name": "Algorithms", "level": "intermediate", "category": "fundamentals", "verified": true }
+  ],
+  "targetSkills": [
+    { "id": "tsk-1", "name": "System Design", "demand": "high", "priority": 1 },
+    { "id": "tsk-2", "name": "AWS", "demand": "high", "priority": 2 },
+    { "id": "tsk-3", "name": "Docker", "demand": "medium", "priority": 3 },
+    { "id": "tsk-4", "name": "GraphQL", "demand": "medium", "priority": 4 },
+    { "id": "tsk-5", "name": "Kubernetes", "demand": "high", "priority": 5 },
+    { "id": "tsk-6", "name": "Machine Learning", "demand": "high", "priority": 6 }
+  ],
+  "interests": ["Web Development", "Cloud Computing", "Open Source", "Startups"],
+  "credentials": [
+    { "id": "cred-1", "name": "AWS Cloud Practitioner", "issuer": "Amazon", "year": 2023, "verified": true }
+  ],
+  "preferences": {
+    "jobTypes": ["full-time", "hybrid"],
+    "locations": ["Bengaluru", "Hyderabad", "Remote"],
+    "salaryRange": { "min": 800000, "max": 1800000, "currency": "INR" },
+    "industries": ["Information Technology", "Digital Services", "Software"]
+  },
+  "goals": [
+    {
+      "id": "goal-1",
+      "title": "Become a Senior Software Engineer at a leading tech company",
+      "description": "I want to grow into a senior engineering role within 3 years, working on scalable systems.",
+      "targetDate": "2028-06-01",
+      "status": "active",
+      "createdAt": "2025-01-15T10:00:00Z"
+    }
+  ],
+  "activities": [
+    { "id": "act-1", "type": "course", "title": "React Advanced Patterns", "status": "completed", "date": "2025-08-10" },
+    { "id": "act-2", "type": "assessment", "title": "Skill Gap Analysis", "status": "completed", "date": "2025-09-01" },
+    { "id": "act-3", "type": "application", "title": "Applied to Infosys SWE", "status": "in-progress", "date": "2025-08-28" }
+  ],
+  "milestones": [
+    { "id": "ms-1", "title": "Complete profile setup", "status": "completed", "date": "2025-01-20" },
+    { "id": "ms-2", "title": "First skill assessment", "status": "completed", "date": "2025-03-15" },
+    { "id": "ms-3", "title": "Apply to 10 companies", "status": "in-progress", "progress": 60 },
+    { "id": "ms-4", "title": "Complete AWS certification", "status": "pending" }
+  ],
+  "tasks": [
+    { "id": "task-1", "title": "Complete System Design course", "priority": "high", "status": "pending", "dueDate": "2025-10-15" },
+    { "id": "task-2", "title": "Update resume with latest projects", "priority": "medium", "status": "pending", "dueDate": "2025-09-10" },
+    { "id": "task-3", "title": "Practice coding interview problems", "priority": "high", "status": "in-progress", "dueDate": "2025-09-30" }
+  ],
+  "opportunities": [
+    {
+      "id": "opp-1",
+      "company": "Digital India Corporation",
+      "logo": "digitalindiacorporation",
+      "title": "Software Developer — Digital Governance Platform",
+      "location": "New Delhi",
+      "workType": "Hybrid",
+      "experienceLevel": "Mid Level",
+      "salaryRange": "₹8 - 14 LPA",
+      "matchScore": 96,
+      "skillsMatch": 5,
+      "skillsTotal": 5,
+      "description": "Build citizen-facing digital governance platforms under the Digital India programme.",
+      "postedDate": "2026-09-01",
+      "saved": false
+    },
+    {
+      "id": "opp-2",
+      "company": "Google",
+      "logo": "google",
+      "title": "Software Engineer",
+      "location": "Bengaluru",
+      "workType": "Hybrid",
+      "experienceLevel": "Mid Level",
+      "salaryRange": "₹18 - 32 LPA",
+      "matchScore": 95,
+      "skillsMatch": 5,
+      "skillsTotal": 5,
+      "description": "Build scalable systems for Google Cloud products.",
+      "postedDate": "2025-08-25",
+      "saved": false
+    },
+    {
+      "id": "opp-3",
+      "company": "Microsoft",
+      "logo": "microsoft",
+      "title": "Frontend Developer",
+      "location": "Hyderabad",
+      "workType": "Onsite",
+      "experienceLevel": "Mid Level",
+      "salaryRange": "₹12 - 22 LPA",
+      "matchScore": 88,
+      "skillsMatch": 4,
+      "skillsTotal": 5,
+      "description": "Develop modern web applications using React and TypeScript.",
+      "postedDate": "2025-08-20",
+      "saved": true
+    },
+    {
+      "id": "opp-4",
+      "company": "Digital India Corporation",
+      "logo": "digitalindiacorporation",
+      "title": "Cloud Engineer — National Cloud Initiative",
+      "location": "Bengaluru",
+      "workType": "Hybrid",
+      "experienceLevel": "Mid Level",
+      "salaryRange": "₹9 - 16 LPA",
+      "matchScore": 84,
+      "skillsMatch": 4,
+      "skillsTotal": 5,
+      "description": "Support cloud infrastructure for Digital India and MeghRaj initiatives.",
+      "postedDate": "2026-08-28",
+      "saved": false
+    },
+    {
+      "id": "opp-5",
+      "company": "Infosys",
+      "logo": "infosys",
+      "title": "Full Stack Engineer",
+      "location": "Bengaluru",
+      "workType": "Hybrid",
+      "experienceLevel": "Mid Level",
+      "salaryRange": "₹10 - 18 LPA",
+      "matchScore": 82,
+      "skillsMatch": 4,
+      "skillsTotal": 5,
+      "description": "Build enterprise solutions for global technology clients.",
+      "postedDate": "2025-08-22",
+      "saved": false
+    },
+    {
+      "id": "opp-6",
+      "company": "Amazon",
+      "logo": "amazon",
+      "title": "SDE II",
+      "location": "Bengaluru",
+      "workType": "Onsite",
+      "experienceLevel": "Senior Level",
+      "salaryRange": "₹18 - 32 LPA",
+      "matchScore": 78,
+      "skillsMatch": 3,
+      "skillsTotal": 5,
+      "description": "Design and implement distributed systems at scale.",
+      "postedDate": "2025-08-18",
+      "saved": false
+    }
+  ],
+  "applications": [
+    { "id": "app-1", "company": "Digital India Corporation", "logo": "digitalindiacorporation", "title": "Software Developer — Digital Governance Platform", "status": "under-review", "appliedDate": "2026-08-28" },
+    { "id": "app-2", "company": "Microsoft", "logo": "microsoft", "title": "Frontend Developer", "status": "assessment", "appliedDate": "2025-08-20" },
+    { "id": "app-3", "company": "Amazon", "logo": "amazon", "title": "SDE II", "status": "interview", "appliedDate": "2025-08-15" },
+    { "id": "app-4", "company": "Google", "logo": "google", "title": "Software Engineer", "status": "rejected", "appliedDate": "2025-07-30" }
+  ],
+  "journey": [
+    { "id": "j-1", "stage": "goal", "title": "Career goal defined", "date": "2025-01-15", "description": "Set goal to become Senior Software Engineer" },
+    { "id": "j-2", "stage": "profile", "title": "Profile completed", "date": "2025-01-20", "description": "Added education, skills, and preferences" },
+    { "id": "j-3", "stage": "skills", "title": "Skills inventory updated", "date": "2025-03-10", "description": "Added 16 skills across programming and soft skills" },
+    { "id": "j-4", "stage": "gap-analysis", "title": "Skill gap identified", "date": "2025-09-01", "description": "Identified gaps in System Design, AWS, Docker" },
+    { "id": "j-5", "stage": "plan", "title": "Learning roadmap created", "date": "2025-09-01", "description": "Personalised 6-month learning plan generated" }
+  ],
+  "stats": {
+    "matchesFound": 6,
+    "applied": 4,
+    "interviews": 1,
+    "skillsAdded": 16,
+    "skillsTotal": 22
+  },
+  "notifications": [
+    { "id": "n-1", "type": "opportunity", "message": "New job match: Infosys Software Engineer (95% match)", "read": false, "date": "2025-09-02T08:00:00Z" },
+    { "id": "n-2", "type": "deadline", "message": "Task due soon: Update resume by Sep 10", "read": false, "date": "2025-09-01T10:00:00Z" },
+    { "id": "n-3", "type": "assessment", "message": "Your skill reassessment is ready", "read": true, "date": "2025-08-30T14:00:00Z" }
+  ],
+  "agentMemory": {
+    "lastInteraction": "2025-09-01T16:30:00Z",
+    "conversationSummary": "Discussed skill gaps in cloud technologies and recommended AWS learning path.",
+    "nextBestActions": [
+      "Complete System Design fundamentals course",
+      "Schedule mock interview practice",
+      "Apply to 2 more matching opportunities this week"
+    ]
+  }
+}
