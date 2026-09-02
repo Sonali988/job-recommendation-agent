@@ -8,7 +8,6 @@ import {
   FileText,
   Brain,
   GraduationCap,
-  BriefcaseBusiness,
   Users,
 } from 'lucide-react'
 import { ProgressRing } from '../ui/Badges'
@@ -35,9 +34,11 @@ export function Sidebar({ profileStrength }: SidebarProps) {
     <aside className="w-[248px] bg-white border-r border-gray-200/80 flex flex-col h-screen sticky top-0 shrink-0 z-20">
       <div className="px-5 py-5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-sm shadow-primary-200">
-            <BriefcaseBusiness size={20} className="text-white" />
-          </div>
+          <img
+            src="/yuvamitra.png"
+            alt="YuvaMitra logo"
+            className="w-10 h-10 rounded-xl object-contain shrink-0"
+          />
           <div>
             <h1 className="font-bold text-gray-900 text-[15px] leading-tight">{t('app.name')}</h1>
             <p className="text-[11px] text-gray-400 leading-snug mt-0.5">{t('app.tagline')}</p>
@@ -52,10 +53,9 @@ export function Sidebar({ profileStrength }: SidebarProps) {
             to={to}
             end={to === '/'}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[13px] transition-all ${
-                isActive
-                  ? 'bg-primary-600 text-white font-semibold shadow-sm shadow-primary-200'
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium'
+              `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[13px] transition-all ${isActive
+                ? 'bg-primary-600 text-white font-semibold shadow-sm shadow-primary-200'
+                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium'
               }`
             }
           >

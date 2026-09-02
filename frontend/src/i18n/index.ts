@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       app: {
-        name: 'SkillMatch AI',
+        name: 'YuvaMitra',
         tagline: 'Your Career, Our Priority',
       },
       nav: {
@@ -144,7 +144,7 @@ const resources = {
   hi: {
     translation: {
       app: {
-        name: 'माई भारत',
+        name: 'YuvaMitra',
         tagline: 'आपका करियर, हमारी प्राथमिकता',
       },
       nav: {

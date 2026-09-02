@@ -1,10 +1,12 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Briefcase, Search } from 'lucide-react'
 import type { Opportunity, YouthProfile } from '../types/youth'
 import { JobCard } from '../components/jobs/JobCard'
 import { SkillTierBadge } from '../components/ui/Badges'
 import { tierCardClass } from '../services/profileMetrics'
+import { collectProfileSkills } from '../services/skillMatch'
 
 interface JobMatchesPageProps {
   data: YouthProfile
@@ -23,6 +25,12 @@ function matchesSearch(opp: Opportunity, query: string) {
     opp.company.toLowerCase().includes(q) ||
     opp.location.toLowerCase().includes(q)
   )
+}
+
+function matchesLocation(opp: Opportunity, loc: string) {
+  const l = loc.trim().toLowerCase()
+  if (!l) return true
+  return opp.location.toLowerCase().includes(l)
 }
 
 function matchesWorkType(opp: Opportunity, filter: WorkTypeFilter) {
@@ -46,16 +54,29 @@ function sortOpportunities(opps: Opportunity[], sort: SortOption) {
 
 export function JobMatchesPage({ data, onToggleSave, onApply }: JobMatchesPageProps) {
   const { t } = useTranslation()
+  const [searchParams] = useSearchParams()
   const [search, setSearch] = useState('')
+  const [locationFilter, setLocationFilter] = useState('')
   const [workType, setWorkType] = useState<WorkTypeFilter>('all')
   const [sort, setSort] = useState<SortOption>('match')
 
+  // Initialize / update from header search params (q, loc).
+  useEffect(() => {
+    setSearch(searchParams.get('q') ?? '')
+    setLocationFilter(searchParams.get('loc') ?? '')
+  }, [searchParams])
+
+  const profileSkills = useMemo(() => collectProfileSkills(data.skills), [data.skills])
+
   const filtered = useMemo(() => {
     const matched = data.opportunities.filter(
-      (opp) => matchesSearch(opp, search) && matchesWorkType(opp, workType),
+      (opp) =>
+        matchesSearch(opp, search) &&
+        matchesLocation(opp, locationFilter) &&
+        matchesWorkType(opp, workType),
     )
     return sortOpportunities(matched, sort)
-  }, [data.opportunities, search, workType, sort])
+  }, [data.opportunities, search, locationFilter, workType, sort])
 
   const workTypes: WorkTypeFilter[] = ['all', 'remote', 'hybrid', 'onsite']
 
@@ -103,9 +124,8 @@ export function JobMatchesPage({ data, onToggleSave, onApply }: JobMatchesPagePr
             <button
               key={type}
               onClick={() => setWorkType(type)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-colors ${
-                workType === type ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-colors ${workType === type ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               {type === 'all' ? t('pages.matches.all') : type} ({count})
             </button>
@@ -123,7 +143,7 @@ export function JobMatchesPage({ data, onToggleSave, onApply }: JobMatchesPagePr
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((opp) => (
             <div key={opp.id} className={tierCardClass(data.skillTier)}>
-              <JobCard opp={opp} onToggleSave={onToggleSave} onApply={onApply} compact />
+              <JobCard opp={opp} onToggleSave={onToggleSave} onApply={onApply} profileSkills={profileSkills} compact />
             </div>
           ))}
         </div>

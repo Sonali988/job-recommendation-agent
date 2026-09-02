@@ -6,6 +6,7 @@ import type { YouthProfile } from '../types/youth'
 import { JobCard } from '../components/jobs/JobCard'
 import { SkillTierBadge } from '../components/ui/Badges'
 import { tierCardClass } from '../services/profileMetrics'
+import { collectProfileSkills } from '../services/skillMatch'
 
 interface SavedJobsPageProps {
   data: YouthProfile
@@ -16,6 +17,7 @@ interface SavedJobsPageProps {
 export function SavedJobsPage({ data, onToggleSave, onApply }: SavedJobsPageProps) {
   const { t } = useTranslation()
   const saved = useMemo(() => data.opportunities.filter((o) => o.saved), [data.opportunities])
+  const profileSkills = useMemo(() => collectProfileSkills(data.skills), [data.skills])
 
   return (
     <div className="space-y-5 max-w-[1200px]">
@@ -46,7 +48,7 @@ export function SavedJobsPage({ data, onToggleSave, onApply }: SavedJobsPageProp
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {saved.map((opp) => (
             <div key={opp.id} className={tierCardClass(data.skillTier)}>
-              <JobCard opp={opp} onToggleSave={onToggleSave} onApply={onApply} compact />
+              <JobCard opp={opp} onToggleSave={onToggleSave} onApply={onApply} profileSkills={profileSkills} compact />
             </div>
           ))}
         </div>

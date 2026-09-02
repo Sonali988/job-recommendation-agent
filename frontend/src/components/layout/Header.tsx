@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Search, Bell, MapPin, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { ProfileSummary } from '../../types/case'
@@ -19,9 +20,20 @@ export function Header({
   onSelectProfile,
 }: HeaderProps) {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
+  const [query, setQuery] = useState('')
+  const [location, setLocation] = useState('')
   const menuRef = useRef<HTMLDivElement>(null)
   const current = profiles.find((p) => p.profileId === selectedProfileId) || profiles[0]
+
+  function submitSearch(e?: React.FormEvent) {
+    e?.preventDefault()
+    const params = new URLSearchParams()
+    if (query.trim()) params.set('q', query.trim())
+    if (location.trim()) params.set('loc', location.trim())
+    navigate(`/matches${params.toString() ? `?${params.toString()}` : ''}`)
+  }
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -34,11 +46,16 @@ export function Header({
   return (
     <header className="bg-white border-b border-gray-200/80 px-6 py-3.5 flex items-center gap-6 sticky top-0 z-10">
       <div className="flex-1 flex justify-center max-w-3xl mx-auto">
-        <div className="flex w-full items-center bg-white border border-gray-200 rounded-xl overflow-hidden card-shadow">
+        <form
+          onSubmit={submitSearch}
+          className="flex w-full items-center bg-white border border-gray-200 rounded-xl overflow-hidden card-shadow"
+        >
           <div className="flex-1 relative">
             <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               placeholder={t('search.placeholder')}
               className="w-full pl-10 pr-4 py-2.5 text-sm bg-transparent focus:outline-none"
             />
@@ -48,14 +65,19 @@ export function Header({
             <MapPin size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               placeholder={t('search.location')}
               className="w-full pl-10 pr-3 py-2.5 text-sm bg-transparent focus:outline-none"
             />
           </div>
-          <button className="m-1.5 px-5 py-2 bg-primary-600 text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors whitespace-nowrap">
+          <button
+            type="submit"
+            className="m-1.5 px-5 py-2 bg-primary-600 text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors whitespace-nowrap"
+          >
             {t('search.button')}
           </button>
-        </div>
+        </form>
       </div>
 
       <div className="flex items-center gap-2 shrink-0">
@@ -92,11 +114,10 @@ export function Header({
                     onSelectProfile(p.profileId)
                     setOpen(false)
                   }}
-                  className={`w-full text-left px-3 py-2.5 text-sm hover:bg-primary-50 transition-colors ${
-                    p.profileId === (selectedProfileId || current?.profileId)
-                      ? 'text-primary-700 font-semibold bg-primary-50/50'
-                      : 'text-gray-700'
-                  }`}
+                  className={`w-full text-left px-3 py-2.5 text-sm hover:bg-primary-50 transition-colors ${p.profileId === (selectedProfileId || current?.profileId)
+                    ? 'text-primary-700 font-semibold bg-primary-50/50'
+                    : 'text-gray-700'
+                    }`}
                 >
                   <span className="block">{p.name}</span>
                   <span className="text-[11px] text-gray-400">{p.location}</span>
